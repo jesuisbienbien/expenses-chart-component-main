@@ -1,0 +1,157 @@
+:root {
+  --soft-red: hsl(10, 79%, 65%);
+  --cyan: hsl(186, 34%, 60%);
+  --dark-brown: hsl(25, 47%, 15%);
+  --medium-brown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --very-pale-orange: hsl(33, 100%, 98%);
+  --scale: 3.5;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  background-color: var(--cream);
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main {
+  min-width: 340px;
+  margin: 0 1rem 2rem 1rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+.thin {
+  font-weight: 400;
+}
+.rounded-corner {
+  border: none;
+  border-radius: 0.5rem;
+}
+.balance {
+  background-color: var(--soft-red);
+  color: var(--very-pale-orange);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 0 0 1.5rem 0;
+  p.bold {
+    font-size: 1.5rem;
+  }
+}
+h1,
+.total,
+.percentage {
+  color: var(--dark-brown);
+}
+.spending {
+  background-color: var(--very-pale-orange);
+  padding: 1.5rem 1rem;
+  h1 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  hr {
+    border: solid 1px var(--soft-red);
+    opacity: 30%;
+    margin: 2rem 0;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .chart {
+      width: 11.5%;
+      text-align: center;
+      position: relative;
+
+      .amount {
+        background-color: var(--dark-brown);
+        color: var(--very-pale-orange);
+        font-size: 0.8rem;
+        border-radius: 5px;
+        width: 125%;
+        padding: 0.5rem;
+        margin: 0 0 0.5rem 0;
+        position: relative;
+        right: 14%;
+        opacity: 0;
+      }
+      .bar {
+        background-color: var(--soft-red);
+        border-radius: 5px;
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.5;
+        }
+      }
+      .label {
+        font-size: smaller;
+      }
+    }
+  }
+  p.thin {
+    color: var(--medium-brown);
+  }
+  .total-report {
+    margin: 0 0 0.5rem 0;
+    p.total {
+      font-size: 1.8rem;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .compare-percentage {
+      text-align: right;
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 768px) {
+  :root {
+    --scale: 2.5;
+  }
+  body {
+    font-size: 1.125rem;
+  }
+  .balance {
+    padding: 1rem 2rem;
+    p.bold {
+      font-size: 2rem;
+    }
+  }
+  .spending {
+    padding: 2rem 2rem;
+    h1 {
+      font-size: 2rem;
+    }
+    .total-report {
+      p.total {
+        font-size: 3rem;
+      }
+    }
+  }
+}
